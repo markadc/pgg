@@ -2,6 +2,7 @@ package crawler
 
 import (
 	"encoding/json"
+	"fmt"
 	"pgg/utils/loger"
 	"testing"
 )
@@ -13,6 +14,8 @@ func TestSpider(t *testing.T) {
 	headers := map[string]string{"User-Agent": "Go requests"}
 	params := map[string]string{"name": "wauo", "age": "22"}
 	res, _ := s.Get("https://httpbin.org/get", headers, params)
+	fmt.Println("JSTF")
+	fmt.Println(res.JSTF())
 	loger.Success("GET\n{}", res.Text)
 
 	// POST 请求（请求体）
