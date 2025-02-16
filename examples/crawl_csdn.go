@@ -40,7 +40,7 @@ func gotoMarkadc() {
 	if err != nil {
 		fmt.Println(err)
 	}
-	loger.Success("{}", response.Data.List)
+	fmt.Println(response.Data.Total)
 	for _, item := range response.Data.List {
 		fmt.Printf("Title: %s\nURL: %s\n\n", item.Title, item.URL)
 	}
