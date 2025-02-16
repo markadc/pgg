@@ -13,7 +13,7 @@ func Now() string {
 
 // Default 补充开头
 func Default(s, level string, values ...interface{}) string {
-	msg := fmt.Sprintf("%s | %s\t| - %s", Now(), level, PyFormat(s, values...))
+	msg := fmt.Sprintf("%s | %-10s | - %s", Now(), level, PyFormat(s, values...))
 	return msg
 }
 
