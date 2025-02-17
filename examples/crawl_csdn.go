@@ -16,12 +16,12 @@ type Response struct {
 }
 
 type Data struct {
-	List  []Item `json:"List"`
-	Total *int   `json:"Total"`
+	List  []Item `json:"list"`
+	Total *int   `json:"total"`
 }
 
 type Item struct {
-	Title string `json:"Title"`
+	Title string `json:"title"`
 	URL   string `json:"url"`
 }
 
@@ -40,7 +40,7 @@ func gotoMarkadc() {
 	if err != nil {
 		fmt.Println(err)
 	}
-	fmt.Println(response.Data.List)
+	fmt.Println(response.Data.List, "\n")
 	for _, item := range response.Data.List {
 		fmt.Printf("Title: %s\nURL: %s\n\n", item.Title, item.URL)
 	}
