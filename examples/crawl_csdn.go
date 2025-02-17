@@ -44,7 +44,11 @@ func gotoMarkadc() {
 	for _, item := range response.Data.List {
 		fmt.Printf("Title: %s\nURL: %s\n\n", item.Title, item.URL)
 	}
-	loger.Success("一共搜索到了 {} 条文章\n", len(response.Data.List))
+	if len(response.Data.List) > 0 {
+		loger.Success("一共搜索到了 {} 条文章\n", len(response.Data.List))
+	} else {
+		loger.Warning("没有搜索到文章")
+	}
 }
 
 func main() {
