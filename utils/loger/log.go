@@ -1,7 +1,6 @@
 package loger
 
 import (
-	"fmt"
 	"time"
 )
 
@@ -11,28 +10,49 @@ func Now() string {
 	return currTime
 }
 
-// Default 补充开头
-func Default(s, level string, values ...interface{}) string {
-	msg := fmt.Sprintf("%s | %-10s | - %s", Now(), level, PyFormat(s, values...))
-	return msg
+// SuppTime 补充时间
+func SuppTime(s string, values ...interface{}) string {
+	return Format("{}  {}", Now(), Format(s, values...))
 }
 
 func Debug(s string, values ...interface{}) {
-	Print(Default(s, "DEBUG", values...), "blue")
+	PrintWithColor(SuppTime(s, values...), "blue")
 }
 
 func Info(s string, values ...interface{}) {
-	Print(Default(s, "INFO", values...), "")
+	PrintWithColor(SuppTime(s, values...), "")
 }
 
 func Warning(s string, values ...interface{}) {
-	Print(Default(s, "WARNING", values...), "yellow")
+	PrintWithColor(SuppTime(s, values...), "yellow")
 }
 
 func Error(s string, values ...interface{}) {
-	Print(Default(s, "ERROR", values...), "red")
+	PrintWithColor(SuppTime(s, values...), "red")
 }
 
 func Success(s string, values ...interface{}) {
-	Print(Default(s, "SUCCESS", values...), "green")
+	PrintWithColor(SuppTime(s, values...), "green")
+}
+
+type Loger struct{}
+
+func (l Loger) Blue(s string, values ...interface{}) {
+	PrintWithColor(Format(s, values...), "blue")
+}
+
+func (l Loger) Default(s string, values ...interface{}) {
+	Print(s, values...)
+}
+
+func (l Loger) Yellow(s string, values ...interface{}) {
+	PrintWithColor(Format(s, values...), "yellow")
+}
+
+func (l Loger) Red(s string, values ...interface{}) {
+	PrintWithColor(Format(s, values...), "red")
+}
+
+func (l Loger) Green(s string, values ...interface{}) {
+	PrintWithColor(Format(s, values...), "green")
 }

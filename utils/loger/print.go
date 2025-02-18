@@ -5,16 +5,21 @@ import (
 	"strings"
 )
 
-// PyFormat 大括号 {} 表示占位
-func PyFormat(template string, values ...interface{}) string {
+// Format 大括号 {} 表示占位
+func Format(template string, values ...interface{}) string {
 	for _, value := range values {
 		template = strings.Replace(template, "{}", fmt.Sprintf("%v", value), 1)
 	}
 	return template
 }
 
-// Print 带颜色的输出
-func Print(content string, color string) {
+func Print(f string, values ...interface{}) {
+	s := Format(f, values...)
+	fmt.Println(s)
+}
+
+// PrintWithColor 带颜色的输出
+func PrintWithColor(content string, color string) {
 	colors := map[string]string{
 		"black":         "30",
 		"red":           "31",
