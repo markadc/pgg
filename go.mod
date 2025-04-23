@@ -1,3 +1,3 @@
-module github.com/markadc/pgg
+module pgg
 
 go 1.23.4
