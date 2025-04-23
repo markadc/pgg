@@ -1,8 +1,8 @@
 package crawler
 
 import (
+	"github/markadc/pgg/requests"
 	"net/http"
-	"pgg/requests"
 	"time"
 )
 

@@ -3,7 +3,7 @@ package requests
 import (
 	"encoding/json"
 	"fmt"
-	"pgg/utils/loger"
+	"github/markadc/pgg/utils/loger"
 	"testing"
 	"time"
 )
