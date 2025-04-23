@@ -2,7 +2,7 @@ package py
 
 import (
 	"encoding/json"
-	"github/markadc/pgg"
+	"github.com/markadc/pgg"
 )
 
 func Dumps(jsonMap pgg.A) (string, error) {

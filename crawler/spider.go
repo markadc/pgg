@@ -1,7 +1,7 @@
 package crawler
 
 import (
-	"github/markadc/pgg/requests"
+	"github.com/markadc/pgg/requests"
 	"net/http"
 	"time"
 )

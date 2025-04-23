@@ -2,8 +2,8 @@ package crawler
 
 import (
 	"encoding/json"
-	"github/markadc/pgg"
-	"github/markadc/pgg/utils/py"
+	"github.com/markadc/pgg"
+	"github.com/markadc/pgg/utils/py"
 	"log"
 )
 

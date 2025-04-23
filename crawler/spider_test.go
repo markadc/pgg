@@ -3,7 +3,7 @@ package crawler
 import (
 	"encoding/json"
 	"fmt"
-	"github/markadc/pgg/utils/loger"
+	"github.com/markadc/pgg/utils/loger"
 	"testing"
 )
 

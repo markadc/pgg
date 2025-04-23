@@ -2,7 +2,7 @@ package py
 
 import (
 	"fmt"
-	"github/markadc/pgg"
+	"github.com/markadc/pgg"
 	"testing"
 )
 
